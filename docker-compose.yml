@@ -1,0 +1,12 @@
+version: '2'
+services:
+  target-redshift:
+    image: python:3.7.7-stretch
+    working_dir: /code
+    entrypoint: /code/docker-entrypoint.sh
+    environment:
+      TARGET_S3_AWS_ACCESS_KEY_ID: "{AWS_KEY_ID}"
+      TARGET_S3_AWS_SECRET_ACCESS_KEY: "{AWS_KEY_SECRET}"
+
+    volumes:
+      - .:/code
